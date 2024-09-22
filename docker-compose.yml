@@ -1,0 +1,15 @@
+services:
+  app:
+    container_name: react-mui-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - type: bind
+        source: ./app
+        target: /home/react-mui/app
+    command: /bin/sh
+    ports:
+      - "3000:3000"
+    stdin_open: true
+    tty: true
